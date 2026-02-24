@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VN7 | أبوعتب</title>
+    <style>
+        :root {
+            --bg: #050507;
+            --purple: #8e2de2;
+            --card: #0f0f13;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            margin: 0; padding: 0;
+            text-align: center;
+        }
+
+        /* الهيدر مع الأيقونة فوق يسار */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 5%; background: #000;
+            border-bottom: 2px solid var(--purple);
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        /* صورة VN7 فوق يسار التي تفتح القائمة */
+        .menu-btn {
+            width: 50px; height: 50px;
+            cursor: pointer; border-radius: 50%;
+            border: 2px solid var(--purple);
+            order: 0; /* لضمان وجودها في جهة اليسار حسب ترتيب الـ flex */
+        }
+
+        .logo { font-size: 28px; font-weight: bold; order: 1; }
+        .logo span { color: var(--purple); }
+
+        .container { max-width: 600px; margin: 20px auto; padding: 15px; }
+
+        .page { display: none; }
+        .active { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .hero-btn {
+            background: #5865F2; display: block; padding: 20px;
+            border-radius: 15px; color: white; text-decoration: none;
+            font-weight: bold; font-size: 18px; margin-bottom: 20px;
+        }
+
+        .section-title {
+            color: #00e5ff; font-size: 22px; margin: 30px 0 15px;
+            border-right: 5px solid var(--purple); padding-right: 15px; text-align: right;
+        }
+
+        .card {
+            background: var(--card); border-radius: 20px; padding: 15px;
+            border: 1px solid #222; margin-bottom: 20px; text-align: right;
+        }
+
+        .card img { width: 100%; border-radius: 15px; margin-bottom: 15px; border: 1px solid #333; }
+
+        .btn-sm {
+            display: block; padding: 15px; border-radius: 12px;
+            color: white; text-decoration: none; font-weight: bold;
+            margin-top: 10px; text-align: center; font-size: 16px;
+        }
+
+        footer { padding: 30px; color: #555; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="https://raw.githubusercontent.com/hatm12345cc-source/VN7/refs/heads/main/IMG_1937.jpeg" class="menu-btn" onclick="toggleMenu()" alt="VN7 Menu">
+    <div class="logo">V<span>N7</span></div>
+</header>
+
+<div class="container">
+    
+    <div id="home" class="page active">
+        <div class="section-title">القائمة الرئيسية 🏠</div>
+        <a href="https://discord.gg/haX59nFsM" class="hero-btn">انضم لسيرفر الديسكورد الرسمي 💬</a>
+        <p style="color:#888;">اضغط على شعار VN7 فوق يسار لفتح التحميلات</p>
+    </div>
+
+    <div id="hacks" class="page">
+        
+        <div class="section-title">هاك آيفون (بدون شهايد) 🍎</div>
+
+        <div class="card">
+            <img src="https://raw.githubusercontent.com/hatm12345cc-source/VN7/refs/heads/main/IMG_1929.png">
+            <h2>Delta iOS</h2>
+            <div style="display: grid; gap: 10px;">
+                <a href="itms-services://?action=download-manifest&url=https://delta.bz/manifest.plist" class="btn-sm" style="background:var(--purple)">تثبيت Delta مباشر</a>
+                <a href="https://nekoo.eu.org/W7dMvm" class="btn-sm" style="background:#6a11cb">دلتا VR7</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://raw.githubusercontent.com/hatm12345cc-source/VN7/refs/heads/main/IMG_1935.jpeg">
+            <h2>SkibX iOS</h2>
+            <a href="itms-services://?action=download-manifest&url=https://skibx.com/ota.plist" class="btn-sm" style="background:var(--purple)">تثبيت SkibX مباشر</a>
+        </div>
+
+        <div class="card">
+            <img src="https://raw.githubusercontent.com/hatm12345cc-source/VN7/refs/heads/main/IMG_1938.jpeg">
+            <p style="text-align: center; color: #00e5ff;">هذه هي قائمة التحميلات بدون شراء شهادات</p>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    VN7 | من صنع أبوعتب للبرمجة والتكنولوجيا © 2026
+</footer>
+
+<script>
+    function toggleMenu() {
+        var home = document.getElementById('home');
+        var hacks = document.getElementById('hacks');
+        
+        if (home.style.display !== 'none') {
+            home.style.display = 'none';
+            hacks.style.display = 'block';
+            hacks.classList.add('active');
+        } else {
+            hacks.style.display = 'none';
+            home.style.display = 'block';
+            home.classList.add('active');
+        }
+    }
+</script>
+
+</body>
+</html>
